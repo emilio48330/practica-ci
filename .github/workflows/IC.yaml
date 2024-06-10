@@ -1,4 +1,4 @@
-name: Practica integracion continua
+name: IC
 
 on:
   push:
