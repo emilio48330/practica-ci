@@ -1,27 +1,25 @@
-name: Node.js C-I
+name: Node.js CI
 
 on:
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+    branches:
+      - main  # Cambiar a la rama principal de tu repositorio
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
+    - name: Checkout Repository
       uses: actions/checkout@v2
 
-    - name: Set up Node.js
+    - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '16'
+        node-version: '14'  # Cambiar según la versión de Node.js que necesites
 
-    - name: Install dependencies
+    - name: Install Dependencies
       run: npm install
 
-    - name: Run tests
+    - name: Run Tests
       run: npm test
